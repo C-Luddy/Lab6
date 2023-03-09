@@ -1,4 +1,9 @@
 # Christian Luddy
+
+encoded_password = ""
+
+
+# Function to print menu using print statements
 def menu():
     print("Menu")
     print("-------------")
@@ -7,17 +12,19 @@ def menu():
     print("3. Quit\n")
 
 
+# Encoding Function, Loops through each letter/digit of password and increases numerical value by 3
 def encode(password):
     final_password = ""
-    for i in range(0, len(password)):
-        value = int(password[i])
+    for i in password:
+        value = int(i)
+        # Using Modulus to remove tens digit
         final_value = (value + 3) % 10
         final_password += str(final_value)
     return final_password
 
-
+# Main Control loop and function
 def main():
-    encoded_password = ""
+    global encoded_password
     while True:
         menu()
         option = int(input("Please enter an option: "))
@@ -28,6 +35,7 @@ def main():
         elif option == 1:
             password = input("Please enter your password to encode: ")
             encoded_password = encode(password)
+            print("Your password has been encoded and stored!")
         else:
             print("Invalid Selection Please Pick A Menu Option")
 
