@@ -22,6 +22,15 @@ def encode(password):
         final_password += str(final_value)
     return final_password
 
+#Decoding Function
+def decode(password):
+    decodedPassword = ""
+    #For loop to iterate and build new string
+    for digit in password:
+        #(10-3) used in order to avoid negative integers and keep the values within the 1-9 range per digit ditto for the use of modulo
+        new_digit = str((int(digit) + (10-3)) % 10)
+        decodedPassword += new_digit
+
 # Main Control loop and function
 def main():
     global encoded_password
