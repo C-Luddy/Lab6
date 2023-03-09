@@ -30,6 +30,7 @@ def decode(password):
         #(10-3) used in order to avoid negative integers and keep the values within the 1-9 range per digit ditto for the use of modulo
         new_digit = str((int(digit) + (10-3)) % 10)
         decodedPassword += new_digit
+    return decodedPassword
 
 # Main Control loop and function
 def main():
